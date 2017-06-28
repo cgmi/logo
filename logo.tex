@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[pdftex,active,tightpage]{preview}
+%\setlength\PreviewBorder{2mm} % use to add a border around the image
+\usepackage{tikz}
+
+% Colors
+\definecolor{darkblue}{RGB}{15,155,220}
+\definecolor{mediumblue}{RGB}{96,186,227}
+\definecolor{lightblue}{RGB}{156,208,232}
+
+% Rectangles
+\newcommand{\rectOne}{(0,0),(1,0),(1,1),(2,1),(2,2),(3,2),(4,2),(5,2),(6,2),(1,4)
+                     ,(2,5),(4,4),(5,4),(5,3),(6,3),(7,3),(8,3),(9,3),(9,4),(9,2)
+                     ,(9,5),(10,5),(8,5),(9,6),(8,6),(7,6),(6,6),(7,7),(6,7),(5,7)
+                     ,(4,7),(4,8),(3,8),(10,2),(11,2),(22,-2),(23,-2),(20,1),(20,2)
+                     ,(19,3),(18,3),(18,4),(21,1),(22,1),(23,1),(24,1),(25,1)
+                     ,(26,1),(14,0),(15,0),(17,-2),(18,-2),(19,-2),(19,-3)}
+\newcommand{\rectTwo}{(2,3),(10,3),(16,3),(16,1),(18,1),(16,-1),(18,-1),(20,-1)
+                     ,(22,-1),(24,-1),(26,-1),(20,-3)}
+\newcommand{\rectThree}{(12,1)}
+
+\begin{document}
+\begin{preview}
+  \begin{tikzpicture}[scale=0.2]
+    \foreach \c in \rectOne {\fill[darkblue] \c rectangle ([shift={(1,1)}] \c;);}
+      \foreach \c in \rectTwo { \fill[mediumblue] \c rectangle ([shift={(2,2)}] \c;); }
+      \foreach \c in \rectThree { \fill[lightblue] \c rectangle ([shift={(4,4)}] \c;); }
+    \node[gray] at (2,-2.5) {\Huge{\textsf{graphics.uni.kn}}};
+  \end{tikzpicture}
+\end{preview}
+\end{document}
